@@ -11,6 +11,7 @@
     ],
     "minimum-stability": "beta",
     "require": {
+        "php": ">=7.0",
         "guzzlehttp/guzzle": "^6.3",
         "illuminate/support": "^5.7",
         "symfony/psr-http-message-bridge": "^1.1"
@@ -22,5 +23,12 @@
         "files": [
             "src/helpers/helper.php"
         ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Treinetic\\Paynow\\PaynowServiceProvider"
+            ]
+        }
     }
 }
