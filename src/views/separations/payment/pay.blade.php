@@ -17,7 +17,7 @@
             <div class="form-group">
                 <label>Name on the card</label>
                 <input id="fullname" type="text" class="form-control" required="required"
-                       data-vm="Name on the card is required" value="K L I H PERERA"
+                       data-vm="Name on the card is required"
                 />
             </div>
 
@@ -34,7 +34,7 @@
                         <label><span class="hidden-xs">Expiration</span> </label>
                         <div class="input-group">
                             <input type="number" class="form-control" placeholder="MM"
-                                   id="expMonth" value="05"
+                                   id="expMonth"
                                    required
                                    data-vm="Valid card expiration month is required",
                                    data-count="2"
@@ -42,7 +42,7 @@
                             <span class="slash"> / </span>
                             <input type="number" class="form-control" placeholder="YY"
                                    id="expYear"
-                                   required value="21"
+                                   required
                                    data-vm="Valid card expiration year is required"
                                    data-count="2"
                             />
