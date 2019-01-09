@@ -28,3 +28,15 @@ Complete Payment
 $this->masterCardApi->securePayFromCard($request, $db_currency, $db_total, $transactionId);
 
 ```
+
+make sure to publish
+
+```
+
+php artisan vendor:publish
+
+
+
+```
+
+and select `publish` tag 
