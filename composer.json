@@ -1,0 +1,26 @@
+{
+    "name": "treinetic/paynow",
+    "description": "this is a composer package wrapping the master card payment implementation, locally supported bank is com bank",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "imal hasaranga",
+            "email": "imal.hasaranga@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "illuminate/support": "^5.7",
+        "symfony/psr-http-message-bridge": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Treinetic\\Paynow\\": "src/"
+        },
+        "files": [
+            "src/helpers/helper.php"
+        ]
+    }
+}
