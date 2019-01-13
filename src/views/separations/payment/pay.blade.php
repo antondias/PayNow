@@ -53,8 +53,8 @@
                     <div class="form-group text-right">
                         <label data-toggle="tooltip" title=""
                                data-original-title="3 digits code on back side of the card">CVV
-                            <i
-                                    class="fa fa-question-circle"></i></label>
+                            <i class="fa fa-question-circle cvvtootltip"></i>
+                        </label>
                         <input type="text" placeholder="CVV" class="form-control" id="cardCvv"
                                required readonly
                                data-vm="CVV is required"

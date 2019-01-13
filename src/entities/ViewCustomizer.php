@@ -16,15 +16,26 @@ class ViewCustomizer
     private $providerBrandings = "images/providerBranding.jpg";
     private $serviceUnavailable = "images/page/wentwrong.jpg";
 
+    private $tech_solution_branding = "Technology solution by Treinetic (pvt) Ltd.";
+    private $tech_solution_branding_url = "";
+
+
     private $packageBase = "treinetic/paynow/";
 
+
+    public function __construct()
+    {
+        $this->providerBrandings = $this->packageBase . $this->providerBrandings;
+        $this->serviceUnavailable = $this->packageBase . $this->serviceUnavailable;
+        $this->clientLogo = $this->packageBase . $this->clientLogo;
+    }
 
     /**
      * @return mixed
      */
     public function getClientLogo()
     {
-        return $this->packageBase.$this->clientLogo;
+        return $this->clientLogo;
     }
 
     /**
@@ -40,7 +51,7 @@ class ViewCustomizer
      */
     public function getProviderBrandings()
     {
-        return $this->packageBase.$this->providerBrandings;
+        return $this->providerBrandings;
     }
 
     /**
@@ -56,7 +67,7 @@ class ViewCustomizer
      */
     public function getServiceUnavailable(): string
     {
-        return $this->packageBase.$this->serviceUnavailable;
+        return $this->serviceUnavailable;
     }
 
     /**
@@ -67,13 +78,48 @@ class ViewCustomizer
         $this->serviceUnavailable = $serviceUnavailable;
     }
 
+    /**
+     * @return string
+     */
+    public function getTechSolutionBranding(): string
+    {
+        return $this->tech_solution_branding;
+    }
 
+    /**
+     * @param string $tech_solution_branding
+     */
+    public function setTechSolutionBranding(string $tech_solution_branding): void
+    {
+        $this->tech_solution_branding = $tech_solution_branding;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTechSolutionBrandingUrl(): string
+    {
+        return $this->tech_solution_branding_url;
+    }
+
+    /**
+     * @param string $tech_solution_branding_url
+     */
+    public function setTechSolutionBrandingUrl(string $tech_solution_branding_url): void
+    {
+        $this->tech_solution_branding_url = $tech_solution_branding_url;
+    }
+
+
+    public function hasTechSolutionBranding(): bool
+    {
+        return $this->tech_solution_branding != null && $this->tech_solution_branding != "";
+    }
 
     /*
      * other customizings will come later
      *
      * */
-
 
 
 }

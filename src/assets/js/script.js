@@ -1,4 +1,5 @@
 $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
     spinner().show();
     $(".pay-button").click(function (event) {
         if (getFormValidationErrorMessags().length > 0) {
@@ -94,15 +95,15 @@ function handleValidationErrors(errors) {
     if (errors.securityCode || errors.cardNumber || errors.expiryMonth) {
         spinner().hide();
         if (errors.securityCode) {
-            customMessages.push("Security code is "+errors.securityCode);
+            customMessages.push("Security code is " + errors.securityCode);
         }
         if (errors.cardNumber) {
-            customMessages.push("Card number is "+errors.cardNumber);
+            customMessages.push("Card number is " + errors.cardNumber);
         }
-        if(errors.expiryMonth){
-            customMessages.push("Expiration month is "+errors.expiryMonth);
+        if (errors.expiryMonth) {
+            customMessages.push("Expiration month is " + errors.expiryMonth);
         }
-    }else{
+    } else {
         customMessages.push("Unexpected error, please try again later");
     }
     showErrorMessages(customMessages);
@@ -142,9 +143,9 @@ function getFormValidationErrorMessags() {
     for (var x in allElements) {
         if (!allElements[x][0].checkValidity()) {
             messages.push(allElements[x].data("vm"));
-        }else{
-            if(allElements[x].data("count")){
-                if((parseInt(allElements[x].data("count")) !== allElements[x].val().length)){
+        } else {
+            if (allElements[x].data("count")) {
+                if ((parseInt(allElements[x].data("count")) !== allElements[x].val().length)) {
                     messages.push(allElements[x].data("vm"));
                 }
             }

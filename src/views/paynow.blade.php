@@ -9,8 +9,9 @@
 <html>
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.1.3/dist/bootstrap-validate.js"></script>
 
     @if($active)
@@ -62,7 +63,21 @@
 
     @include("paynow::separations.payment.complete")
     @include("paynow::separations.payment.failed")
+
+
 </div>
+
+@if($vc->hasTechSolutionBranding())
+    <div class="solution-provider">
+        @if($vc->getTechSolutionBrandingUrl() != null && $vc->getTechSolutionBrandingUrl() != "")
+            <a href="{{$vc->getTechSolutionBrandingUrl()}}" target="_blank">
+                {{$vc->getTechSolutionBranding()}}
+            </a>
+        @else
+            {{$vc->getTechSolutionBranding()}}
+        @endif
+    </div>
+@endif
 
 <!--Loader code-->
 @include("paynow::separations.loader.loader")
