@@ -79,23 +79,49 @@ class PaymentResult implements \JsonSerializable
 
     private function figureErrorMessage($message)
     {
-        if($message){
+        if ($message) {
             if (array_key_exists("error", $message) && array_key_exists("result", $message) && $message["result"] == "ERROR") {
                 $errr = $message["error"];
-                if(array_key_exists("field",$errr) && $errr["field"] == "sourceOfFunds.provided.card.securityCode"){
+                if (array_key_exists("field", $errr) && $errr["field"] == "sourceOfFunds.provided.card.securityCode") {
                     return "CVV value is required to complete the transaction";
-                }else if(array_key_exists("explanation",$errr)){
+                } else if (array_key_exists("explanation", $errr)) {
                     return $errr["explanation"];
                 }
                 return "Unexpected error, please check your card information";
+            }else if(array_key_exists("result", $message) && $message["result"] == "FAILURE"){
+                return $this->getErrorMessageBasedOnGatewayCode($message);
             }
         }
     }
 
-    private function isSuccess($message){
-        return $message && (array_key_exists("result", $message))  && ($message["result"] === "SUCCESS");
+    private function isSuccess($message)
+    {
+        return $message && (array_key_exists("result", $message)) && ($message["result"] === "SUCCESS");
     }
 
+    private function getErrorMessageBasedOnGatewayCode($message)
+    {
+        if (array_key_exists("response", $message) && array_key_exists("gatewayCode", $message["response"])) {
+            switch ($message["response"]["gatewayCode"]){
+                case "DECLINED" :
+                    return "Your payment request has declined.";
+                    break;
+                case "EXPIRED_CARD" :
+                    return "Card you entered has expired.";
+                    break;
+                case "TIMED_OUT" :
+                    return "We could not process your request due to internal timeout please retry.";
+                    break;
+                case "ACQUIRER_SYSTEM_ERROR" :
+                case "UNSPECIFIED_FAILURE" :
+                case "UNKNOWN" :
+                    return "Internal system error occurred please try again later.";
+                default : {
+                    return null;
+                }
+            }
+        }
+    }
 
 
 }

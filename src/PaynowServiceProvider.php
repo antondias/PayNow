@@ -18,8 +18,11 @@ class PaynowServiceProvider extends ServiceProvider
         $this->registerHelpers();
         $this->loadRoutesFrom(__DIR__."/routes/web.php");
         $this->loadViewsFrom(__DIR__.'/views','paynow');
-        $this->publishes([
-            __DIR__.'/assets' => public_path('treinetic/paynow'),], 'public');
+        $this->publishes(
+            [
+                __DIR__.'/assets/vendor' => public_path('treinetic/paynow/vendor'),
+                __DIR__.'/assets/images' => public_path('treinetic/paynow/images'),
+            ], 'paynow');
     }
 
     public function register(){
