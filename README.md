@@ -33,10 +33,16 @@ make sure to publish
 
 ```
 
-php artisan vendor:publish
+php artisan vendor:publish --tag=paynow --force
 
 
 
 ```
 
 and select `publish` tag 
+
+
+
+### For devs 
+
+* `gulp build` to create final js files

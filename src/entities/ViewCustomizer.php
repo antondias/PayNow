@@ -18,7 +18,7 @@ class ViewCustomizer
 
     private $tech_solution_branding = "Technology solution by Treinetic (pvt) Ltd.";
     private $tech_solution_branding_url = "";
-
+    private $style="";
 
     private $packageBase = "treinetic/paynow/";
 
@@ -114,6 +114,19 @@ class ViewCustomizer
     public function hasTechSolutionBranding(): bool
     {
         return $this->tech_solution_branding != null && $this->tech_solution_branding != "";
+    }
+
+
+    public function setStyle($style){
+        if(@file_exists($style)){
+            $this->style = file_get_contents($style);
+        }else{
+            $this->style = $style;
+        }
+    }
+
+    public function getStyle(){
+        return $this->style;
     }
 
     /*

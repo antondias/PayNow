@@ -62,6 +62,7 @@ gulp.task('build-scripts-custom', function () {
             './src/assets/js/script.js',
             './src/assets/js/requests.js',
             './src/assets/js/pay.js',
+            './src/assets/js/notification.js',
 
         ]
     )

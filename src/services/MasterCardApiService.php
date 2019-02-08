@@ -43,7 +43,7 @@ class MasterCardApiService
     }
 
 
-    public function createSessionId(int $orderid, float $amount, string $currency)
+    public function createSessionId(string $orderid, float $amount, string $currency)
     {
         $body = (new MasterCardApiRequest())
             ->addOrder($orderid, $amount, $currency)

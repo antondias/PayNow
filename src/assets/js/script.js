@@ -29,6 +29,7 @@ $(function () {
                 if (response.status) {
                     $(".payment-complete").show();
                     $(".payment-make-view").hide();
+                    Notification.paymentSuccess();
                 } else {
                     $(".payment-failed-view .reasonfor-failior").hide();
                     $(".payment-failed-view").show();
@@ -37,6 +38,7 @@ $(function () {
                         $(".payment-failed-view .reasonfor-failior").html(response.reason);
                         $(".payment-failed-view .reasonfor-failior").show();
                     }
+                    Notification.paymentFailed();
                 }
 
             }, function (response) {
@@ -58,6 +60,7 @@ $(function () {
             setTimeout(function () {
                 fixUi(function () {
                     spinner().hide();
+                    Notification.uiLoaded();
                 })
             }, 500);
         });

@@ -13,6 +13,11 @@
     <meta name="description" content="Viditure ee whitelabled application">
     <link href="{{ URL::asset('treinetic/paynow/vendor/treinetic-bundle.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('treinetic/paynow/vendor/treinetic-design.css') }}" rel="stylesheet">
+    <style>
+
+        {{$vc->getStyle()}}
+        {!!  $vc->getStyle() !!}
+    </style>
 </head>
 <body>
 <div class="container-fluid vertical-center">
