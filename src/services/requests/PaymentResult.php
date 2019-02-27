@@ -14,6 +14,7 @@ class PaymentResult implements \JsonSerializable
 
     private $status = false;
     private $result;
+    private $reason;
 
     public function __construct($result = null)
     {

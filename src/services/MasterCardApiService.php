@@ -50,6 +50,7 @@ class MasterCardApiService
             ->disableSecure3D()
             ->setApiOperation(MasterCardApiRequest::$APIOP_CREATE_CHECKOUT_SESSION)
             ->jsonSerialize();
+        $res = null;
         try {
 
             $res = $this->clent->request("POST", $this->getUrl("create_session"), $body);
