@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Treinetic/PayNow#readme",
   "dependencies": {
-    "bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "bootstrap-validate": "^2.1.3",
     "jquery": "^3.3.1",
     "popper": "^1.0.1",
