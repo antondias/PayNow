@@ -20,7 +20,7 @@
         <h2 class="payment-failed-title">Failed!</h2>
         <h3 class="payment-failed-message" style="margin-bottom: 20px;">Sorry your purchase was unsuccessful</h3>
         <div class="alert alert-warning reasonfor-failior" role="alert" style="margin-bottom: 30px;">
-            Reason for the failior
+            Reason for the failure
         </div>
 
         <button type="button" class="btn btn-outline-dark retry-button-payment">Retry</button>

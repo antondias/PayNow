@@ -19,6 +19,7 @@ class ViewCustomizer
     private $tech_solution_branding = "Technology solution by Treinetic (pvt) Ltd.";
     private $tech_solution_branding_url = "";
     private $style="";
+    private $isResponsive = true;
 
     private $packageBase = "treinetic/paynow/";
 
@@ -127,6 +128,22 @@ class ViewCustomizer
 
     public function getStyle(){
         return $this->style;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isResponsive(): bool
+    {
+        return $this->isResponsive;
+    }
+
+    /**
+     * @param bool $isResponsive
+     */
+    public function setIsResponsive(bool $isResponsive)
+    {
+        $this->isResponsive = $isResponsive;
     }
 
     /*

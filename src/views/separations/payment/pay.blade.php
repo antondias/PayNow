@@ -4,7 +4,7 @@
 
 ?>
 
-<div class="col-md-6 col-sm-12">
+<div class="@if ($vc->isResponsive()) col-md-6 col-sm-12 @else col-lg-12 col-md-12 col-sm-12 @endif">
     <div class="order-paymentinfo">
         <h5 class="order-paymentinfo-title">
             Payment Information
