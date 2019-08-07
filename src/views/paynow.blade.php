@@ -23,7 +23,7 @@
 <div class="container-fluid vertical-center">
     @if($active)
         <div class="row payment-make-view">
-            <div class="col-12 @if ($vc->isResponsive()) col-md-10 col-lg-10 @else col-md-8 col-lg-12 @endif col-sm-12 mx-auto">
+            <div class="col-12 @if ($vc->isResponsive()) col-md-10 col-lg-10 @else col-md-8 col-lg-8 @endif col-sm-12 mx-auto">
                 <article class="card m-t-10 card-wrapp-box">
                     @if(!$completePayment)
                         <div class="missing-onfirmationRoute">Error : Unable to find confirmation route, please create a

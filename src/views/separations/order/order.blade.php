@@ -3,7 +3,7 @@
 /* @var \Treinetic\Paynow\entities\ViewCustomizer $vc */
 
 ?>
-<div class="@if ($vc->isResponsive()) col-md-6 col-sm-12 @else col-lg-12 col-md-12 col-sm-12 @endif" style="margin-bottom: 20px;">
+<div class="@if ($vc->isResponsive()) col-md-6 @else col-lg-12 col-md-12 @endif col-sm-12" style="margin-bottom: 20px;">
     <div class="order-summery">
         <h5 class="order-summery-title">
             Order Summery
