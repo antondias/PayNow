@@ -20,4 +20,8 @@ interface OrderInterface
 
     public function getOrderCurrency(): string;
 
+    public function getOrderDiscountText(): string;
+
+    public function getOrderDiscount(): float;
+
 }

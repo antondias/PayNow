@@ -98,6 +98,10 @@ html, body {
     font-weight: 500;
 }
 
+.order-summery .order-discount {
+    font-size: 14px;
+}
+
 .order-summery .list-unstyled {
     margin-bottom: 0px;
 }
