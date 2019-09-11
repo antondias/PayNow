@@ -16,14 +16,19 @@ Notification.toIOS = function (funcName,message) {
     }
 };
 
-Notification.toWeb = function (message) {
+Notification.toWeb = function (funcName,message) {
+    if (funcName === "paymentSuccess") {
+        message = "_wapp_payment_success_";
+    } else if (funcName === "paymentFailed") {
+        message = "_wapp_payment_fail_";
+    }
     window.parent.postMessage(message, '*');
 };
 
 Notification.toDevices = function (funcName,message) {
     Notification.toAndroid(funcName,message);
     Notification.toIOS(funcName,message);
-    Notification.toWeb(message);
+    Notification.toWeb(funcName,message);
 };
 
 

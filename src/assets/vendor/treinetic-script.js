@@ -129,10 +129,15 @@ $(function () {
     } catch (e) {
         console.log("The native context does not exist yet")
     }
-}, Notification.toWeb = function (n) {
+}, Notification.toWeb = function (e, n) {
+    if (e === "paymentSuccess") {
+        n = "_wapp_payment_success_";
+    } else if (e === "paymentFailed") {
+        n = "_wapp_payment_fail_";
+    }
     window.parent.postMessage(n, '*');
 }, Notification.toDevices = function (e, n) {
-    Notification.toAndroid(e, n), Notification.toIOS(e, n), Notification.toWeb(n)
+    Notification.toAndroid(e, n), Notification.toIOS(e, n), Notification.toWeb(e, n)
 }, Notification.uiLoaded = function () {
     Notification.toDevices("uiLoaded", null)
 }, Notification.paymentFailed = function () {
