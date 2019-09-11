@@ -44,10 +44,10 @@
         <hr class="order-total-separator"/>
         @if($order->getOrderDiscountText() && $order->getOrderDiscount())
             <div class="row order-discount">
-                <div class="col">
+                <div class="col discount">
                     {{$order->getOrderDiscountText()}}
                 </div>
-                <div class="col-6 text-right">
+                <div class="col-6 text-right discount">
                     ({{$order->getOrderCurrency() . " " . trToCurrency($order->getOrderDiscount())}})
                 </div>
             </div>
