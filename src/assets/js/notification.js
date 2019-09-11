@@ -16,10 +16,14 @@ Notification.toIOS = function (funcName,message) {
     }
 };
 
+Notification.toWeb = function (message) {
+    window.parent.postMessage(message, '*');
+};
 
 Notification.toDevices = function (funcName,message) {
     Notification.toAndroid(funcName,message);
     Notification.toIOS(funcName,message);
+    Notification.toWeb(message);
 };
 
 

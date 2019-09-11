@@ -129,8 +129,10 @@ $(function () {
     } catch (e) {
         console.log("The native context does not exist yet")
     }
+}, Notification.toWeb = function (n) {
+    window.parent.postMessage(n, '*');
 }, Notification.toDevices = function (e, n) {
-    Notification.toAndroid(e, n), Notification.toIOS(e, n)
+    Notification.toAndroid(e, n), Notification.toIOS(e, n), Notification.toWeb(n)
 }, Notification.uiLoaded = function () {
     Notification.toDevices("uiLoaded", null)
 }, Notification.paymentFailed = function () {
